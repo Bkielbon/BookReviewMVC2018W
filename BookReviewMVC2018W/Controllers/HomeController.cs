@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BookReviewMVC2018W.Models;
 
 namespace BookReviewMVC2018W.Controllers
 {
@@ -10,7 +11,12 @@ namespace BookReviewMVC2018W.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            BookReviewDbEntities db = new BookReviewDbEntities();
+           // var bks = from b in db.Books
+            //          select b).ToList();
+
+
+            return View(db.Books.ToList());
         }
 
         public ActionResult About()
